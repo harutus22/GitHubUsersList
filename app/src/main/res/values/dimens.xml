@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_text_start"> 10dp</dimen>
+    <dimen name="margin_text_top"> 10dp</dimen>
+    <dimen name="res_view_text_size"> 25sp</dimen>
+    <dimen name="res_view_padding"> 10dp</dimen>
+    <dimen name="fragment_user_name"> 50sp</dimen>
+    <dimen name="fragment_margin_top_text"> 10dp</dimen>
+    <dimen name="fragment_margin_end_text"> 10dp</dimen>
+    <dimen name="fragment_common_text_size"> 20sp</dimen>
+    <dimen name="fragment_margin_text_start"> 10dp</dimen>
+    <dimen name="fragment_margin_count_start"> 5dp</dimen>
+    <dimen name="fragment_margin_text_end"> 5dp</dimen>
+    <dimen name="fragment_margin_count_end"> 50dp</dimen>
+    <dimen name="fragment_sub_title_size"> 30sp</dimen>
+    <dimen name="user_pic_size"> 100dp</dimen>
+    <dimen name="view_holder_margin"> 5dp</dimen>
+    <dimen name="view_holder_elevation"> 10dp</dimen>
+    <dimen name="main_pic"> 350dp</dimen>
+    <dimen name="external_link"> 30dp</dimen>
+    <dimen name="external_margin_end"> 30dp</dimen>
+    <dimen name="external_margin_top"> 10dp</dimen>
+</resources>

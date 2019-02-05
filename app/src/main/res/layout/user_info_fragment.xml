@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <android.support.constraint.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/design_default_color_primary"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:id="@+id/fragment_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="@dimen/fragment_user_name"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/fragment_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_pic"
+            app:layout_constraintTop_toBottomOf="@id/fragment_username"
+            android:foregroundGravity="center"
+            />
+
+        <TextView
+            android:id="@+id/fragment_full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/fragment_image"
+            android:textSize="@dimen/fragment_sub_title_size"
+            android:gravity="center"/>
+
+    <ImageView
+        android:id="@+id/linkToGit"
+        android:layout_width="@dimen/external_link"
+        android:layout_height="@dimen/external_link"
+        android:src="@drawable/ic_external_link"
+        android:layout_marginEnd="@dimen/external_margin_end"
+        android:layout_marginTop="@dimen/external_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_image" />
+
+    <TextView
+        android:id="@+id/followersCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/followers_count"
+        android:textSize="@dimen/fragment_common_text_size"
+        android:layout_marginStart="@dimen/fragment_margin_text_start"
+        app:layout_constraintTop_toBottomOf="@id/fragment_full_name"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/fragment_followers_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fragment_common_text_size"
+        app:layout_constraintStart_toEndOf="@id/followersCount"
+        app:layout_constraintTop_toBottomOf="@id/fragment_full_name"
+        android:layout_marginStart="@dimen/fragment_margin_count_start"
+        />
+
+    <TextView
+        android:id="@+id/repoCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fragment_common_text_size"
+        android:text="@string/repo_count"
+        app:layout_constraintTop_toBottomOf="@id/fragment_followers_count"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/fragment_margin_text_start"/>
+
+    <TextView
+        android:id="@+id/fragment_repo_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fragment_common_text_size"
+        app:layout_constraintTop_toBottomOf="@id/fragment_followers_count"
+        app:layout_constraintStart_toEndOf="@id/repoCount"
+        android:layout_marginStart="@dimen/fragment_margin_count_start" />
+
+    <TextView
+        android:id="@+id/repos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/repos"
+        android:textSize="@dimen/fragment_sub_title_size"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repoCount"
+        />
+
+    </android.support.constraint.ConstraintLayout>

@@ -1,7 +1,7 @@
 package com.example.apple.githubuserslist.activity.activity.user;
 
 public class UserList {
-    private String login, gravatar_id, avatar_url;
+    private String login, fullname, avatar_url;
 
     public UserList() {
     }
@@ -10,6 +10,6 @@ public class UserList {
 
     public String imageUrl() { return avatar_url; }
 
-    public String getFullName() { return gravatar_id; }
+    public String getFullName() { return fullname; }
 
 }

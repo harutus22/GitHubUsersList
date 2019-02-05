@@ -38,8 +38,8 @@ public class UserViewAdapter extends RecyclerView.Adapter<UserViewHolder> {
     public void onBindViewHolder(@NonNull UserViewHolder userViewHolder, int i) {
         UserList user = data.get(i);
         Glide.with(userViewHolder.itemView).load(user.imageUrl()).into(userViewHolder.getUserImage());
-        userViewHolder.getFullName().setText(user.getFullName());
         userViewHolder.getUserName().setText(user.getUsername());
+        userViewHolder.getFullName().setText(user.getFullName());
     }
 
     @Override

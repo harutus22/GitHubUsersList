@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <android.support.constraint.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/design_default_color_primary"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/fragment_username"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:background="@color/design_default_color_primary"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/fragment_user_name"
+        android:gravity="center"/>
 
-        <TextView
-            android:id="@+id/fragment_username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textSize="@dimen/fragment_user_name"
-            android:gravity="center"/>
+    <ImageView
+        android:id="@+id/fragment_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_pic"
+        app:layout_constraintTop_toBottomOf="@id/fragment_username"
+        android:foregroundGravity="center"
+        />
 
-        <ImageView
-            android:id="@+id/fragment_image"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/main_pic"
-            app:layout_constraintTop_toBottomOf="@id/fragment_username"
-            android:foregroundGravity="center"
-            />
-
-        <TextView
-            android:id="@+id/fragment_full_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/fragment_image"
-            android:textSize="@dimen/fragment_sub_title_size"
-            android:gravity="center"/>
+    <TextView
+        android:id="@+id/fragment_full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fragment_image"
+        android:textSize="@dimen/fragment_sub_title_size"
+        android:gravity="center"/>
 
     <ImageView
         android:id="@+id/linkToGit"

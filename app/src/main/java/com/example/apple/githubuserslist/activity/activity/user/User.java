@@ -25,6 +25,9 @@ public class User {
     private int followersCount;
     @SerializedName("html_url")
     @Expose private String url;
+    @SerializedName("repos_url")
+    @Expose
+    private String repos;
 
     public User() {
     }
@@ -57,5 +60,9 @@ public class User {
 
     public String getUrl() {
         return url;
+    }
+
+    public String getRepos() {
+        return repos;
     }
 }

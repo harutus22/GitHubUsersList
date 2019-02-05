@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private UserViewAdapter userViewAdapter;
     private List<UserList> users;
     private static final int LIMIT = 10;
+
     private UserViewAdapter.OnItemSelectedListener onItemSelected = new UserViewAdapter.OnItemSelectedListener() {
         @Override
         public void onItemSelected(String user) {
@@ -78,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
             call.enqueue(new Callback<List<UserList>>() {
                 @Override
                 public void onResponse(Call<List<UserList>> call, Response<List<UserList>> response) {
-                    Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
                     List<UserList> userList = response.body();
                     if (userList != null) {
                         users.addAll(userList);

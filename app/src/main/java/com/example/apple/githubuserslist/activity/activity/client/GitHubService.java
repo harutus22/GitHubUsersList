@@ -1,5 +1,6 @@
 package com.example.apple.githubuserslist.activity.activity.client;
 
+import com.example.apple.githubuserslist.activity.activity.user.Repo;
 import com.example.apple.githubuserslist.activity.activity.user.User;
 import com.example.apple.githubuserslist.activity.activity.user.UserList;
 
@@ -16,7 +17,7 @@ public interface GitHubService {
 
     @GET("users/{userName}")
     Call<User> getSingleUser(@Path("userName") String name);
-//
-//    @GET("users/{userName/repos}")
-//    Call<List> getRepos(@Path("userName/repos") String l);
+
+    @GET("users/{userName}/repos")
+    Call<List<Repo>> getRepos(@Path("userName") String name);
 }

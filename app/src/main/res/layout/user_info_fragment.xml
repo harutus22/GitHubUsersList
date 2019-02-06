@@ -94,4 +94,12 @@
         app:layout_constraintTop_toBottomOf="@id/repoCount"
         />
 
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/repos">
+
+        </ListView>
+
     </android.support.constraint.ConstraintLayout>

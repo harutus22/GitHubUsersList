@@ -10,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +20,10 @@ import com.bumptech.glide.Glide;
 import com.example.apple.githubuserslist.R;
 import com.example.apple.githubuserslist.activity.activity.client.ApiManager;
 import com.example.apple.githubuserslist.activity.activity.networkUtils.NetworkUtils;
+import com.example.apple.githubuserslist.activity.activity.user.Repo;
 import com.example.apple.githubuserslist.activity.activity.user.User;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,6 +35,7 @@ public class UserInfoFragment extends Fragment {
     private View view;
     private ImageView image, externLink;
     private TextView userName, fullName, residence, followersCount, reposCount;
+    private ListView listView;
 
     @Nullable
     @Override
@@ -43,15 +49,15 @@ public class UserInfoFragment extends Fragment {
         String user = getArguments().getString(ARG_INTENT);
         init(view);
         downLoadInfo(user);
+        downloadRepo(user);
     }
 
     private void downLoadInfo(String user) {
-        if (NetworkUtils.isNetworkAvailable(getContext())) {//եթե ինտերնետը հասանելի է
-            Call<User> call = ApiManager.getApiClient().getSingleUser(user);////մեր GitHubService-ից ուզենք userName-ով յուզրի տվյալները
+        if (NetworkUtils.isNetworkAvailable(getContext())) {
+            Call<User> call = ApiManager.getApiClient().getSingleUser(user);
             call.enqueue(new Callback<User>() {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
-                    Log.v("TAG", "Success");
                     User user = response.body();
                     if (user != null) {
                         setUser(user);
@@ -75,7 +81,7 @@ public class UserInfoFragment extends Fragment {
         followersCount = view.findViewById(R.id.fragment_followers_count);
         reposCount = view.findViewById(R.id.fragment_repo_count);
         externLink = view.findViewById(R.id.linkToGit);
-
+        listView = view.findViewById(R.id.listView);
     }
 
     private void setUser(User user){
@@ -98,5 +104,30 @@ public class UserInfoFragment extends Fragment {
                 fragmentManager.commit();
             }
         });
+    }
+
+    private void downloadRepo(String user){
+        if(NetworkUtils.isNetworkAvailable(getContext())){
+            Call<List<Repo>> call = ApiManager.getApiClient().getRepos(user);
+            call.enqueue(new Callback<List<Repo>>() {
+                @Override
+                public void onResponse(Call<List<Repo>> call, Response<List<Repo>> response) {
+                    final ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
+                            R.layout.repo_holder, R.id.listTextView);
+                    List<Repo> repos = response.body();
+                    if(repos != null ){
+                        for(Repo repo: repos){
+                            adapter.add(repo.getName());
+                        }
+                        listView.setAdapter(adapter);
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<List<Repo>> call, Throwable t) {
+                    Toast.makeText(getContext(),"Connection Failed", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
     }
 }

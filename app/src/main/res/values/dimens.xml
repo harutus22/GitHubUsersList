@@ -16,7 +16,7 @@
     <dimen name="user_pic_size"> 100dp</dimen>
     <dimen name="view_holder_margin"> 5dp</dimen>
     <dimen name="view_holder_elevation"> 10dp</dimen>
-    <dimen name="main_pic"> 350dp</dimen>
+    <dimen name="main_pic"> 300dp</dimen>
     <dimen name="external_link"> 30dp</dimen>
     <dimen name="external_margin_end"> 30dp</dimen>
     <dimen name="external_margin_top"> 10dp</dimen>

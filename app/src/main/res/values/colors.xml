@@ -6,4 +6,5 @@
     <color name="colorViewPressed"> #1BA920</color>
     <color name="colorViewUnpressed"> #066E0A</color>
     <color name="colorWhite"> #FFFFFF</color>
+    <color name="colorRepos"> #0000ff</color>
 </resources>
